@@ -5,31 +5,40 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
-	<!-- <link rel="stylesheet" href="style.css"> -->
+	<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 	<div class="wrapper">
-		<header>
-			<img class="title-icon" src="img/ChatGPT Image Sep 15, 2025, 11_22_01 AM.png" alt="Logo">
+		<header id="catalog-header">
+			<a class="main-link" href="index.html"><img class="title-icon"
+					src="img/ChatGPT Image Sep 15, 2025, 11_22_01 AM.png" alt="Logo"></a>
 			<nav class="main-menu">
 				<a href="catalogs.html" class="menu-item">Каталог сервісів</a>
 				<a href="#" class="menu-item">Відгуки про сервіси</a>
 				<a href="feedback.html" class="menu-item">Зворотній зв'язок</a>
 			</nav>
+			<nav class="burger" id="burger">
+				<div></div>
+				<div></div>
+				<div></div>
+			</nav>
 			<div class="user-account">
-				<a href="" class="my-account">Перейти у власний кабінет</a>
-				<a href="" class="registration">Зареєструватися</a>
+				<a href="" class="my-account"> <svg class="icon-user" viewBox="0 0 24 24" width="24" height="24"
+						aria-hidden="true" focusable="false" role="img">
+						<path fill="currentColor"
+							d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-3.31 0-10 1.67-10 5v1h20v-1c0-3.33-6.69-5-10-5z" />
+					</svg>
+				</a>
 			</div>
 		</header>
 
 		<main class="catalog">
 			<h1>Каталог сервісів</h1>
 
-			<!-- Сервіс 1 -->
-			<div class="service">
-				<img src="img/diagnost-dviglo.jpg" alt="Діагностика двигуна">
-				<div class="service-details">
+			<ul class="services-list">
+				<li class="service-item">
+					<img src="img/diagnost-dviglo.jpg" alt="Діагностика двигуна">
 					<h2>Діагностика двигуна</h2>
 					<ul>
 						<li>Тип послуги: повна комп’ютерна діагностика</li>
@@ -38,13 +47,10 @@
 						<li>Гарантія: 6 місяців</li>
 						<li>Додаткові переваги: детальний звіт з рекомендаціями</li>
 					</ul>
-				</div>
-			</div>
+				</li>
 
-			<!-- Сервіс 2 -->
-			<div class="service">
-				<img src="img/Заміна-моторної-оливи-768x426.jpg" alt="Заміна моторної оливи">
-				<div class="service-details">
+				<li class="service-item">
+					<img src="img/Заміна-моторної-оливи-768x426.jpg" alt="Заміна моторної оливи">
 					<h2>Заміна моторної оливи</h2>
 					<ul>
 						<li>Тип послуги: заміна моторної оливи та фільтра</li>
@@ -53,13 +59,10 @@
 						<li>Гарантія: 3 місяці</li>
 						<li>Додаткові переваги: використання оригінальних масел</li>
 					</ul>
-				</div>
-			</div>
+				</li>
 
-			<!-- Сервіс 3 -->
-			<div class="service">
-				<img src="img/galmivna-systema.webp" alt="Ремонт гальмівної системи">
-				<div class="service-details">
+				<li class="service-item">
+					<img src="img/galmivna-systema.webp" alt="Ремонт гальмівної системи">
 					<h2>Ремонт гальмівної системи</h2>
 					<ul>
 						<li>Тип послуги: заміна колодок та дисків</li>
@@ -68,13 +71,10 @@
 						<li>Гарантія: 12 місяців</li>
 						<li>Додаткові переваги: перевірка всіх елементів гальм</li>
 					</ul>
-				</div>
-			</div>
+				</li>
 
-			<!-- Сервіс 4 -->
-			<div class="service">
-				<img src="img/1538072181_1537658954.jpg" alt="Заміна акумулятора">
-				<div class="service-details">
+				<li class="service-item">
+					<img src="img/1538072181_1537658954.jpg" alt="Заміна акумулятора">
 					<h2>Заміна акумулятора</h2>
 					<ul>
 						<li>Тип послуги: підбір та установка нового акумулятора</li>
@@ -83,13 +83,10 @@
 						<li>Гарантія: 12 місяців</li>
 						<li>Додаткові переваги: безкоштовна перевірка електросистеми</li>
 					</ul>
-				</div>
-			</div>
+				</li>
 
-			<!-- Сервіс 5 -->
-			<div class="service">
-				<img src="img/vach.jpg" alt="Ремонт підвіски">
-				<div class="service-details">
+				<li class="service-item">
+					<img src="img/vach.jpg" alt="Ремонт підвіски">
 					<h2>Ремонт підвіски</h2>
 					<ul>
 						<li>Тип послуги: заміна амортизаторів, стійок та пружин</li>
@@ -98,13 +95,10 @@
 						<li>Гарантія: 12 місяців</li>
 						<li>Додаткові переваги: тест-драйв після ремонту</li>
 					</ul>
-				</div>
-			</div>
+				</li>
 
-			<!-- Сервіс 6 -->
-			<div class="service">
-				<img src="img/shinomontazh-i-balansirovka__faq.webp" alt="Шиномонтаж та балансування">
-				<div class="service-details">
+				<li class="service-item">
+					<img src="img/shinomontazh-i-balansirovka__faq.webp" alt="Шиномонтаж та балансування">
 					<h2>Шиномонтаж та балансування</h2>
 					<ul>
 						<li>Тип послуги: монтаж/демонтаж коліс та балансування</li>
@@ -113,13 +107,9 @@
 						<li>Гарантія: 6 місяців</li>
 						<li>Додаткові переваги: зберігання шин на сезон</li>
 					</ul>
-				</div>
-			</div>
-
-			<!-- Сервіс 7 -->
-			<div class="service">
-				<img src="img/zamena-tormoznoy-zhidkosti-foto-1.jpg" alt="Заміна гальмівної рідини">
-				<div class="service-details">
+				</li>
+				<li class="service-item">
+					<img src="img/zamena-tormoznoy-zhidkosti-foto-1.jpg" alt="Заміна гальмівної рідини">
 					<h2>Заміна гальмівної рідини</h2>
 					<ul>
 						<li>Тип послуги: повна заміна рідини у гальмівній системі</li>
@@ -128,13 +118,10 @@
 						<li>Гарантія: 6 місяців</li>
 						<li>Додаткові переваги: перевірка гальмівного контуру</li>
 					</ul>
-				</div>
-			</div>
+				</li>
 
-			<!-- Сервіс 8 -->
-			<div class="service">
-				<img src="img/aetozolnye-ochistitel-avto-konditsionerov_opt.jpg" alt="Чистка кондиціонера">
-				<div class="service-details">
+				<li class="service-item">
+					<img src="img/aetozolnye-ochistitel-avto-konditsionerov_opt.jpg" alt="Чистка кондиціонера">
 					<h2>Чистка кондиціонера</h2>
 					<ul>
 						<li>Тип послуги: професійна дезінфекція та заправка кондиціонера</li>
@@ -143,13 +130,10 @@
 						<li>Гарантія: 3 місяці</li>
 						<li>Додаткові переваги: освіження салону</li>
 					</ul>
-				</div>
-			</div>
+				</li>
 
-			<!-- Сервіс 9 -->
-			<div class="service">
-				<img src="img/inx960x640.jpg" alt="Полірування кузова">
-				<div class="service-details">
+				<li class="service-item">
+					<img src="img/inx960x640.jpg" alt="Полірування кузова">
 					<h2>Полірування кузова</h2>
 					<ul>
 						<li>Тип послуги: комплексне полірування та захисне покриття</li>
@@ -158,13 +142,11 @@
 						<li>Гарантія: 12 місяців</li>
 						<li>Додаткові переваги: покращення зовнішнього вигляду</li>
 					</ul>
-				</div>
-			</div>
+				</li>
 
-			<!-- Сервіс 10 -->
-			<div class="service">
-				<img src="img/steklo-far-1.jpg" alt="Заміна склопакетів і фар">
-				<div class="service-details">
+
+				<li class="service-item">
+					<img src="img/steklo-far-1.jpg" alt="Заміна склопакетів і фар">
 					<h2>Заміна склопакетів і фар</h2>
 					<ul>
 						<li>Тип послуги: заміна фар, ліхтарів, склопакетів</li>
@@ -173,8 +155,8 @@
 						<li>Гарантія: 6 місяців</li>
 						<li>Додаткові переваги: перевірка освітлення автомобіля</li>
 					</ul>
-				</div>
-			</div>
+				</li>
+			</ul>
 
 			<a href="index.html" class="back-button">Повернутися на головну сторінку</a>
 		</main>
@@ -191,17 +173,24 @@
 					<p><a href="tel:+380441234567">+38 (044) 123-45-67</a></p>
 					<p><a href="mailto:support@drivefix.com">support@drivefixcenter.com</a></p>
 				</div>
-
-				<div class="links">
-					<a href="">Політика конфіденційності</a>
-					<a href="">Умови використання</a>
-				</div>
+			</div>
+			<div class="links">
+				<a href="">Політика конфіденційності</a>
+				<a href="">Умови використання</a>
 			</div>
 			<div class="footer-bottom">
 				<p>© <span id="year"></span> DriveFix Center. Всі права захищені.</p>
 			</div>
 		</footer>
 	</div>
+	<script>
+		const burger = document.getElementById('burger');
+		const navLinks = document.querySelector('.main-menu');
+
+		burger.addEventListener('click', () => {
+			navLinks.classList.toggle('active');
+		});
+	</script>
 </body>
 
 </html>

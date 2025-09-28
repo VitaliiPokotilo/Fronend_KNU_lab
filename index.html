@@ -4,71 +4,84 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- <link rel="stylesheet" href="style.css"> -->
+	<link rel="stylesheet" href="style.css">
 	<title>DriveFix Center</title>
 </head>
 
 <body>
 	<div class="wrapper">
-		<header>
-			<img class="title-icon" src="img/ChatGPT Image Sep 15, 2025, 11_22_01 AM.png" alt="Logo">
+		<header id="about-head">
+			<a class="main-link" href="index.html"><img class="title-icon"
+					src="img/ChatGPT Image Sep 15, 2025, 11_22_01 AM.png" alt="Logo"></a>
 			<nav class="main-menu">
 				<a href="catalogs.html" class="menu-item">Каталог сервісів</a>
 				<a href="#" class="menu-item">Відгуки про сервіси</a>
 				<a href="feedback.html" class="menu-item">Зворотній зв'язок</a>
 			</nav>
+			<nav class="burger" id="burger">
+				<div></div>
+				<div></div>
+				<div></div>
+			</nav>
 			<div class="user-account">
-				<a href="" class="my-account">Перейти у власний кабінет</a>
-				<a href="" class="registration">Зареєструватися</a>
+				<a href="" class="my-account"> <svg class="icon-user" viewBox="0 0 24 24" width="24" height="24"
+						aria-hidden="true" focusable="false" role="img">
+						<path fill="currentColor"
+							d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-3.31 0-10 1.67-10 5v1h20v-1c0-3.33-6.69-5-10-5z" />
+					</svg>
+				</a>
 			</div>
 		</header>
+		<div class="blank"></div>
+		<main class="about-main">
 
-		<section class="about">
-			<h2>Мета створення сайту</h2>
-			<p>
-				Метою створення сайту <strong>DriveFix Center</strong> є забезпечення клієнтів
-				швидким доступом до інформації про наші послуги, ціни та контакти, а також
-				можливістю зручного запису на обслуговування автомобіля.
-			</p>
+			<section class="about">
+				<h2>Мета створення сайту</h2>
+				<p>
+					Метою створення сайту <strong>DriveFix Center</strong> є забезпечення клієнтів
+					швидким доступом до інформації про наші послуги, ціни та контакти, а також
+					можливістю зручного запису на обслуговування автомобіля.
+				</p>
 
-			<h3>Завдання для досягнення мети</h3>
-			<ol type="I">
-				<li>Надати повну та актуальну інформацію про послуги автосервісу.</li>
-				<li>Забезпечити онлайн-запис на ремонт або обслуговування.</li>
-				<li>Створити зручний інтерфейс для пошуку потрібних сервісів.</li>
-				<li>Покращити комунікацію між клієнтами та майстрами сервісного центру.</li>
-			</ol>
-		</section>
+				<h3>Завдання для досягнення мети</h3>
+				<ol type="I">
+					<li>Надати повну та актуальну інформацію про послуги автосервісу.</li>
+					<li>Забезпечити онлайн-запис на ремонт або обслуговування.</li>
+					<li>Створити зручний інтерфейс для пошуку потрібних сервісів.</li>
+					<li>Покращити комунікацію між клієнтами та майстрами сервісного центру.</li>
+				</ol>
+			</section>
 
-		<section class="services">
-			<h2>Загальна інформація про типи сервісів</h2>
-			<table border="1" cellpadding="8" cellspacing="0">
-				<thead>
-					<tr>
-						<th>Тип сервісу</th>
-						<th>Опис</th>
-						<th>Приклади робіт</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>Технічне обслуговування</td>
-						<td>Регулярна перевірка стану автомобіля для запобігання поломкам.</td>
-						<td>Заміна масла, фільтрів, діагностика систем.</td>
-					</tr>
-					<tr>
-						<td>Ремонтні роботи</td>
-						<td>Відновлення справності вузлів та агрегатів авто.</td>
-						<td>Ремонт двигуна, гальмівної системи, ходової.</td>
-					</tr>
-					<tr>
-						<td>Кузовні та додаткові послуги</td>
-						<td>Роботи, пов’язані з відновленням зовнішнього вигляду та комфорту.</td>
-						<td>Фарбування, рихтування, встановлення сигналізації.</td>
-					</tr>
-				</tbody>
-			</table>
-		</section>
+			<section class="services">
+				<h2>Загальна інформація про типи сервісів</h2>
+				<table border="1" cellpadding="8" cellspacing="0">
+					<thead>
+						<tr>
+							<th>Тип сервісу</th>
+							<th>Опис</th>
+							<th>Приклади робіт</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Технічне обслуговування</td>
+							<td>Регулярна перевірка стану автомобіля для запобігання поломкам.</td>
+							<td>Заміна масла, фільтрів, діагностика систем.</td>
+						</tr>
+						<tr>
+							<td>Ремонтні роботи</td>
+							<td>Відновлення справності вузлів та агрегатів авто.</td>
+							<td>Ремонт двигуна, гальмівної системи, ходової.</td>
+						</tr>
+						<tr>
+							<td>Кузовні та додаткові послуги</td>
+							<td>Роботи, пов’язані з відновленням зовнішнього вигляду та комфорту.</td>
+							<td>Фарбування, рихтування, встановлення сигналізації.</td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+		</main>
 
 		<footer>
 			<div class="footer-container">
@@ -82,11 +95,10 @@
 					<p><a href="tel:+380441234567">+38 (044) 123-45-67</a></p>
 					<p><a href="mailto:support@drivefix.com">support@drivefixcenter.com</a></p>
 				</div>
-
-				<div class="links">
-					<a href="">Політика конфіденційності</a>
-					<a href="">Умови використання</a>
-				</div>
+			</div>
+			<div class="links">
+				<a href="">Політика конфіденційності</a>
+				<a href="">Умови використання</a>
 			</div>
 			<div class="footer-bottom">
 				<p>© <span id="year"></span> DriveFix Center. Всі права захищені.</p>
@@ -94,6 +106,14 @@
 		</footer>
 
 	</div>
+	<script>
+		const burger = document.getElementById('burger');
+		const navLinks = document.querySelector('.main-menu');
+
+		burger.addEventListener('click', () => {
+			navLinks.classList.toggle('active');
+		});
+	</script>
 </body>
 
 </html>

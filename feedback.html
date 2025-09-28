@@ -5,59 +5,72 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
-	<!-- <link rel="stylesheet" href="style.css"> -->
+	<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 	<div class="wrapper">
-		<header>
-			<img class="title-icon" src="img/ChatGPT Image Sep 15, 2025, 11_22_01 AM.png" alt="Logo">
+		<header id="feedback-head">
+			<a class="main-link" href="index.html"><img class="title-icon"
+					src="img/ChatGPT Image Sep 15, 2025, 11_22_01 AM.png" alt="Logo"></a>
 			<nav class="main-menu">
 				<a href="catalogs.html" class="menu-item">Каталог сервісів</a>
 				<a href="#" class="menu-item">Відгуки про сервіси</a>
 				<a href="feedback.html" class="menu-item">Зворотній зв'язок</a>
 			</nav>
+			<nav class="burger" id="burger">
+				<div></div>
+				<div></div>
+				<div></div>
+			</nav>
 			<div class="user-account">
-				<a href="" class="my-account">Перейти у власний кабінет</a>
-				<a href="" class="registration">Зареєструватися</a>
+				<a href="" class="my-account"> <svg class="icon-user" viewBox="0 0 24 24" width="24" height="24"
+						aria-hidden="true" focusable="false" role="img">
+						<path fill="currentColor"
+							d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-3.31 0-10 1.67-10 5v1h20v-1c0-3.33-6.69-5-10-5z" />
+					</svg>
+				</a>
 			</div>
 		</header>
-		<main class="feedback-form">
-			<h1>Зворотній зв’язок</h1>
-			<form action="#" method="post">
-				<fieldset>
-					<legend>Персональна інформація</legend>
 
-					<label for="fullname">Прізвище та ім’я:</label>
-					<input type="text" id="fullname" name="fullname" required>
+		<main>
+			<div class="feedback-form">
+				<h1>Зворотній зв’язок</h1>
+				<form action="#" method="post">
+					<fieldset>
+						<legend>Персональна інформація</legend>
+
+						<label for="fullname">Прізвище та ім’я:</label>
+						<input type="text" id="fullname" placeholder="Введіть ім'я" name="fullname" required>
+						<br>
+						<label for="email">E-mail:</label>
+						<input type="email" id="email" placeholder="Введіть пошту" name="email" required>
+						<br>
+						<label for="age">Вік:</label>
+						<input type="number" id="age" name="age" placeholder="Ваш вік" min="0" max="120" required>
+					</fieldset>
 					<br>
-					<label for="email">E-mail:</label>
-					<input type="email" id="email" name="email" required>
-					<br>
-					<label for="age">Вік:</label>
-					<input type="number" id="age" name="age" min="0" max="120" required>
-				</fieldset>
-				<br>
-				<label for="purpose">Мета зворотнього зв’язку:</label>
-				<select id="purpose" name="purpose" required>
-					<option value="">Оберіть...</option>
-					<option value="співпраця">Співпраця</option>
-					<option value="скарга">Скарга</option>
-					<option value="пропозиція">Пропозиція</option>
-					<option value="помилка">Наявність помилки</option>
-				</select>
+					<label for="purpose">Мета зворотнього зв’язку:</label>
+					<select id="purpose" name="purpose" required>
+						<option value="">Оберіть...</option>
+						<option value="співпраця">Співпраця</option>
+						<option value="скарга">Скарга</option>
+						<option value="пропозиція">Пропозиція</option>
+						<option value="помилка">Наявність помилки</option>
+					</select>
 
-				<label for="details">Детально:</label>
-				<textarea id="details" name="details" maxlength="1000"
-					placeholder="Опишіть ваше повідомлення..."></textarea>
+					<label for="details">Детально:</label>
+					<textarea id="details" name="details" maxlength="1000"
+						placeholder="Опишіть ваше повідомлення..."></textarea>
 
-				<div class="checkbox-group">
-					<input type="checkbox" id="consent" name="consent" required>
-					<label for="consent">Я погоджуюся на обробку моєї інформації</label>
-				</div>
+					<div class="checkbox-group">
+						<input type="checkbox" id="consent" name="consent" required>
+						<label for="consent">Я погоджуюся на обробку моєї інформації</label>
+					</div>
 
-				<button type="submit">Відправити</button>
-			</form>
+					<button type="submit">Відправити</button>
+				</form>
+			</div>
 		</main>
 
 		<footer>
@@ -72,17 +85,25 @@
 					<p><a href="tel:+380441234567">+38 (044) 123-45-67</a></p>
 					<p><a href="mailto:support@drivefix.com">support@drivefixcenter.com</a></p>
 				</div>
-
-				<div class="links">
-					<a href="">Політика конфіденційності</a>
-					<a href="">Умови використання</a>
-				</div>
+			</div>
+			<div class="links">
+				<a href="">Політика конфіденційності</a>
+				<a href="">Умови використання</a>
 			</div>
 			<div class="footer-bottom">
 				<p>© <span id="year"></span> DriveFix Center. Всі права захищені.</p>
 			</div>
 		</footer>
 	</div>
+	<script>
+		const burger = document.getElementById('burger');
+		const navLinks = document.querySelector('.main-menu');
+
+		burger.addEventListener('click', () => {
+			navLinks.classList.toggle('active');
+		});
+	</script>
+
 </body>
 
 </html>
