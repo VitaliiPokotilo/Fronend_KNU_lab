@@ -78,6 +78,7 @@ header {
     gap: 20px;
     justify-content: center;    
     flex-wrap: wrap;       
+	z-index: 200;
 }
 
 .menu-item{
@@ -88,7 +89,7 @@ header {
 }
 
 .menu-item:hover{
-	background-color: rgb(211, 210, 210);
+	background-color: rgba(211, 210, 210, 0);
 	border:  2px solid white;
 }
 
@@ -157,6 +158,53 @@ header {
 	text-align: center;
 }
 
+.textarea-wrapper {
+    position: relative; 
+    width: 100%; 
+}
+#details {
+    transition: all 0.3s ease;
+    width: 100%; 
+    box-sizing: border-box; 
+}
+#details:hover {
+    background-color: rgb(211, 210, 210); 
+    border: 3px solid rgb(145, 142, 142); 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); 
+}
+
+.tooltip-text {
+    /* Ховаємо її */
+    visibility: hidden;
+    opacity: 0;
+    background-color: #333; 
+    color: #fff;            
+    text-align: left;
+    border-radius: 5px;
+    padding: 8px 12px;
+    font-size: 0.9em;
+    width: 220px; 
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    left: 102%; 
+    transform: translateY(-50%); 
+    transition: opacity 0.3s ease;
+}
+#details:hover + .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+@media (max-width: 768px) {
+    .tooltip-text {
+        left: 0;
+        top: 100%; 
+        transform: translateY(0); 
+        margin-top: 5px; 
+        width: 100%; 
+        box-sizing: border-box; 
+    }
+}
 
 /*-----------------------------------------------------------------------------------------*/
 
@@ -221,7 +269,8 @@ footer>div{
     padding: 0 30px;
     background-color: rgb(211, 210, 210);
     gap: 20px;
-    z-index: 100; 
+    z-index: 10; 
+
 }
 
 .about-main{	
@@ -251,12 +300,12 @@ footer>div{
 }
 
 .about h3,h2{
-	margin: 20px 0px 0px 10px;
+	padding: 20px 0px 0px 10px;
 	position: relative;
 }
 
 .about ol{
-	margin-left: 20px;
+	padding-left: 20px;
 }
 
 .services:hover{
@@ -266,10 +315,44 @@ footer>div{
 
 [class = contacts]:hover{
 	font-size: large;
-		transition: all 2s ease; 
+	transition: all 2s ease; 
 }
 
 
+.services { 
+	overflow-x: auto; 
+}
+.services table {
+	min-width: 900px; 
+	width: 100%;
+}
+
+.floating-icon {
+	position: absolute;
+	opacity: 0;
+	animation: fadeInOut 5s ease-in-out; 
+	pointer-events: none; 
+	z-index: 20; 
+}
+.main-link, .main-menu, .burger, .user-account {
+	position: relative; 
+	z-index: 30;
+}
+
+@keyframes fadeInOut {
+	0% {
+    	opacity: 0;
+    	transform: scale(0.8); 
+	}
+	50% {
+    	opacity: 0.7; 
+    	transform: scale(1);
+	}
+	100% {
+		opacity: 0;
+    	transform: scale(0.8); 
+	}
+}
 
 /* catalog */
 
@@ -317,6 +400,8 @@ footer>div{
 }
 .service-item:hover {
 	transform: translateY(-5px);
+	/* background-color: grey;
+	border: 2px solid red; */
 }
 .service-item img{
 	width: 100%;
@@ -325,9 +410,59 @@ footer>div{
 	border-radius: 8px;
 	margin-bottom: 10px;
 }
-.service-item img:hover{
-	filter: grayscale(100%);
-	transition: all 1s ease;
+
+.service-item img:hover {
+    filter: none;
+    transition: none;
+}
+
+.flip-card {
+    background-color: transparent;
+    width: 100%;
+    height: 200px; 
+    perspective: 1000px; /* Глибина 3D-сцени */
+    margin-bottom: 10px; 
+    border-radius: 8px;
+}
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.flip-card-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.flip-card-back {
+    background-color: #f0f0f0;
+    color: #5d6167;
+    padding: 20px;
+    transform: rotateY(180deg); 
+    box-sizing: border-box; 
+}
+.flip-card-back h4 {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.flip-card-back p {
+    font-size: 0.9rem;
+    line-height: 1.4;
 }
 
 .service-item ul {
@@ -346,6 +481,33 @@ footer>div{
 	font-size: 1.2rem;
 	margin: 10px 0;
 	color: #333;
+}
+
+.details-trigger {
+    background: none;
+    border: none;
+    color: #5c6268; 
+    cursor: pointer;
+    padding: 0;
+    font-size: 0.9em;
+    display: inline-block; 
+    margin: 10px;
+    transition: color 0.2s;
+}
+.details-trigger:hover {
+    color: #282c30;
+}
+.service-details {
+    max-height: 0;
+    overflow: hidden;
+    margin: 0;
+    padding-left: 20px; 
+    transition: max-height 0.4s ease-out;
+}
+.details-trigger.active + .service-details {
+    max-height: 500px; 
+    margin-top: 10px; 
+    transition: max-height 0.5s ease-in;
 }
 
 .catalog{
@@ -378,23 +540,28 @@ footer>div{
 	}
 }
 
-@media (max-width: 720px) {
-	.main-menu{
-		position: absolute;
-		top: 10%;
-		right: 40%;
-		background-color: #333;
-		flex-direction: column;
-		width: 200px;
-		display: none; 
-		padding: 10px;
-		border-radius: 5px;
-	}
-	.burger {
+
+
+
+@media (max-width: 768px) {
+    .burger {
         display: flex; 
-	}
-	.main-menu.active {
-    display: flex;
+    }
+
+    .main-menu {
+        flex-direction: column;
+        position: absolute;
+        right: 0; 
+        top: 100px; 
+        background-color: #333; 
+        width: 200px;
+        padding: 10px;
+        border-radius: 5px;
+        z-index: 200; 
+        display: none;
+    }
+    .main-menu.active {
+        display: flex;
     }
 }
 

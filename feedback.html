@@ -60,8 +60,13 @@
 					</select>
 
 					<label for="details">Детально:</label>
-					<textarea id="details" name="details" maxlength="1000"
-						placeholder="Опишіть ваше повідомлення..."></textarea>
+					<div class="textarea-wrapper">
+						<textarea id="details" name="details" maxlength="1000"
+							placeholder="Опишіть ваше повідомлення..."></textarea>
+						<span class="tooltip-text">
+							Дякуючи Вам, ми стаємо кращі! Конкретизуйте мету звернення, будь ласка.
+						</span>
+					</div>
 
 					<div class="checkbox-group">
 						<input type="checkbox" id="consent" name="consent" required>
@@ -95,14 +100,7 @@
 			</div>
 		</footer>
 	</div>
-	<script>
-		const burger = document.getElementById('burger');
-		const navLinks = document.querySelector('.main-menu');
-
-		burger.addEventListener('click', () => {
-			navLinks.classList.toggle('active');
-		});
-	</script>
+	<script src="./script.js"></script>
 
 </body>
 
