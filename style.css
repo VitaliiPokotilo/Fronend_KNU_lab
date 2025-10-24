@@ -167,10 +167,14 @@ header {
     width: 100%; 
     box-sizing: border-box; 
 }
-#details:hover {
+#details.is-hovered {
     background-color: rgb(211, 210, 210); 
     border: 3px solid rgb(145, 142, 142); 
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); 
+}
+.tooltip-text.is-active {
+    visibility: visible;
+    opacity: 1;
 }
 
 .tooltip-text {
@@ -190,10 +194,6 @@ header {
     left: 102%; 
     transform: translateY(-50%); 
     transition: opacity 0.3s ease;
-}
-#details:hover + .tooltip-text {
-    visibility: visible;
-    opacity: 1;
 }
 @media (max-width: 768px) {
     .tooltip-text {
@@ -431,7 +431,7 @@ footer>div{
     transition: transform 0.6s;
     transform-style: preserve-3d;
 }
-.flip-card:hover .flip-card-inner {
+.flip-card-inner.is-flipped {
     transform: rotateY(180deg);
 }
 .flip-card-front, .flip-card-back {

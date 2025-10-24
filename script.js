@@ -1,29 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-	// --- БУРГЕР-МЕНЮ ---
-	const burger = document.getElementById('burger');
-	const navLinks = document.querySelector('.main-menu');
-
-	if (burger && navLinks) {
-		function toggleMenu() {
-			navLinks.classList.toggle('active');
-			burger.classList.toggle('active');
-		}
-
-		function closeMenuOnClickOutside(event) {
-			if (navLinks.classList.contains('active')) {
-				const isClickInsideMenu = navLinks.contains(event.target);
-				const isClickOnBurger = burger.contains(event.target);
-				if (!isClickInsideMenu && !isClickOnBurger) {
-					navLinks.classList.remove('active');
-					burger.classList.remove('active');
-				}
-			}
-		}
-
-		burger.addEventListener('click', toggleMenu);
-		document.addEventListener('click', closeMenuOnClickOutside);
-	}
 
 
 	// --- АНІМАЦІЯ ХЕДЕРА ---
@@ -78,5 +54,58 @@ document.addEventListener('DOMContentLoaded', () => {
 		});
 	});
 
+	// --- АНІМАЦІЯ ФЛІП-КАРТОК ---
+	const allFlipCards = document.querySelectorAll('.flip-card');
+	allFlipCards.forEach(card => {
+		const cardInner = card.querySelector('.flip-card-inner');
+		if (cardInner) {
+			card.addEventListener('mouseenter', () => {
+				cardInner.classList.add('is-flipped');
+			});
+			card.addEventListener('mouseleave', () => {
+				cardInner.classList.remove('is-flipped');
+			});
+		}
+	});
+
+	// --- TOOLTIP НА СТОРІНЦІ ЗВОРОТНОГО ЗВ'ЯЗКУ ---
+	const detailsTextarea = document.getElementById('details');
+	const detailsWrapper = document.querySelector('.textarea-wrapper');
+	const detailsTooltip = detailsWrapper ? detailsWrapper.querySelector('.tooltip-text') : null;
+	if (detailsTextarea && detailsTooltip) {
+		detailsTextarea.addEventListener('mouseenter', () => {
+			detailsTextarea.classList.add('is-hovered');
+			detailsTooltip.classList.add('is-active');
+		});
+		detailsTextarea.addEventListener('mouseleave', () => {
+			detailsTextarea.classList.remove('is-hovered');
+			detailsTooltip.classList.remove('is-active');
+		});
+	}
+
+	// --- БУРГЕР-МЕНЮ ---
+	const burger = document.getElementById('burger');
+	const navLinks = document.querySelector('.main-menu');
+
+	if (burger && navLinks) {
+		function toggleMenu() {
+			navLinks.classList.toggle('active');
+			burger.classList.toggle('active');
+		}
+
+		function closeMenuOnClickOutside(event) {
+			if (navLinks.classList.contains('active')) {
+				const isClickInsideMenu = navLinks.contains(event.target);
+				const isClickOnBurger = burger.contains(event.target);
+				if (!isClickInsideMenu && !isClickOnBurger) {
+					navLinks.classList.remove('active');
+					burger.classList.remove('active');
+				}
+			}
+		}
+
+		burger.addEventListener('click', toggleMenu);
+		document.addEventListener('click', closeMenuOnClickOutside);
+	}
 
 });
